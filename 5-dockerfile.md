@@ -1,5 +1,5 @@
 # Dockerfile
-Un Dockerfile es un archivo de texto plano que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor Docker. Este conjunto de instrucciones define cómo se debe configurar y construir una imagen de contenedor, incluyendo qué sistema operativo base usar, qué software instalar, qué archivos copiar en el contenedor y cómo configurar el entorno de ejecución.
+Un Dockerfile es un archivo de texto plano (sin ninguna extensión asociada) que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor Docker. Este conjunto de instrucciones define cómo se debe configurar y construir una imagen de contenedor, incluyendo qué sistema operativo base usar, qué software instalar, qué archivos copiar en el contenedor y cómo configurar el entorno de ejecución.
 Las instrucciones en un Dockerfile son simples y están diseñadas para ser leídas y comprendidas fácilmente. 
 
 ### FROM 
@@ -50,17 +50,22 @@ La opción -t se utiliza para etiquetar la imagen que se está construyendo con 
 
  
 ### Ejecutar el archivo Dockerfile y construir una imagen en la versión 1.0
-```
-
-```
 
 **¿Cuántos pasos se han ejecutado?**
+- Cuatro pasos
 
 ### Inspeccionar la imagen creada
 # COMPLETAR CON UNA CAPTURA
+```
+docker image inspect centos1:1.0
+```
+
+![Imagen centos](capturas/imagenBasadaCentos.png)
 
 **Modificar el archivo index.html para incluir su nombre**
 **¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen**
+
+- Se ejecutaron dos pasos y no se observa cambios
 
 ## Mecanismo de caché
 Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso de construcción y evitar la repetición de pasos que no han cambiado. Cada instrucción en un Dockerfile crea una capa en la imagen final. Docker intenta reutilizar las capas de una construcción anterior si no han cambiado, lo que reduce significativamente el tiempo de construcción.
@@ -72,28 +77,31 @@ Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso
 
 ### Crear un contenedor a partir de las imagen creada, mapear todos los puertos
 ```
-
+docker run -P -d --name  my-server centos1:1.0.
 ```
 
 ### ¿Con que puerto host se está realizando el mapeo?
+
 # COMPLETAR CON LA RESPUESTA
+- Puerto 32769
 
 **¿Qué es una imagen huérfana?**
 # COMPLETAR CON LA RESPUESTA
+- También conocida como dangling image, es una imagen que ya no tiene una etiqueta asociada y no está referenciada por ningún contenedor. Estas imágenes suelen ser residuos de procesos de construcción de imágenes o actualizaciones y, aunque no se usan activamente, ocupan espacio en el sistema.
 
 ### Identificar imágenes huérfanas
 ```
-
+docker images -f dangling=true 
 ```
 
 ### Listar los IDS de las imágenes huérfanas
 ```
-
+docker images -f dangling=true ls
 ```
 
 ### Eliminar imágenes huérfanas
 ```
-
+docker image prune -f
 ```
 
 ### Ejecutar un archivo Dockerfile que tiene otro nombre
