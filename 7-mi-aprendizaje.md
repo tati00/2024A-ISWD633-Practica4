@@ -1,3 +1,3 @@
 # COMPLETAR  
-Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
-Si solucionó un problema presentado al realizar la práctica también se debe documentar.
+He aprendido como limitar la memoria RAM y swap de un contenedor, puesto que, consume memoria del ordenador. Además, se observo como limitar el uso de la CPU por parte de un contenedor; núcleos. El uso correcto de healtcheck para monitorizar los contenedores en docker. También la creación de una imagen asociada a un dockerfile. Finalmente, conocer las políticas de reinicio en diferentes imágenes.
+

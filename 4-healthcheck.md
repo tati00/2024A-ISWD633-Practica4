@@ -59,7 +59,7 @@ Define el tiempo máximo que Docker esperará para que el comando de verificaci�
 --health-timeout=<valor><unidad>
 ```
 ### Retries
-Especifica el número de intentos fallidos consecutivos que Docker permitirá antes de marcar el contenedor como no saludable (unhealthy).
+Especifica el número de intentos fallidos consecutivos que Docker permitirá antes de marcar el contenedor como no saludable (unhealthy) (min 2 veces).
 ```
 --health-retries=<valor>
 ```

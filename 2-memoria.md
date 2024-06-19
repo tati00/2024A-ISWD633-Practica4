@@ -5,7 +5,7 @@ Definir la cantidad máxima de memoria RAM que el contenedor puede utilizar a un
 ```
 _Se puede usar –-memory o -m_
 
-Definir la cantidad total de memoria que el contenedor puede usar, sumando la memoria RAM y la memoria swap.
+Definir la cantidad total de memoria que el contenedor puede usar, sumando la memoria RAM y la memoria swap (memoria total para el contenedor).
 ```
 --memory=<valor><unidad> --memory-swap=<valorUnidad>
 ```
@@ -27,4 +27,5 @@ Limitar la memoria RAM que el contenedor puede utilizar a 300 megabytes y que el
 docker run -d --name server-nginx --memory=300m --memory-swap=1g nginx:alpine
 ```
 **¿Cuántos megabytes de memoria swap puede utilizar el contenedor creado anteriormente?**
+- Alrededor de 700mb
 # COMPLETAR
